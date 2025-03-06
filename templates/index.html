@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatwa Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Fatwa Assistant</h1>
+        <p>Ask your Islamic questions and get answers based on Quran, Hadith, and your selected Fiqh.</p>
+        <form id="queryForm">
+            <input type="text" id="question" placeholder="Enter your Islamic question..." required>
+            <select id="fiqh" required>
+                <option value="" disabled selected>Select Fiqh</option>
+                <option value="Hanafi">Hanafi</option>
+                <option value="Shafi'i">Shafi'i</option>
+                <option value="Maliki">Maliki</option>
+                <option value="Hanbali">Hanbali</option>
+                <option value="Salafi">Salafi</option>
+            </select>
+            <button type="submit">Ask</button>
+        </form>
+        <div id="response" class="response"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
