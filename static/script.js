@@ -6,11 +6,11 @@ document.getElementById('queryForm').addEventListener('submit', async (event) =>
     const responseDiv = document.getElementById('response');
 
     if (!question || !fiqh) {
-        responseDiv.innerHTML = "Please enter a question and select a Fiqh.";
+        responseDiv.innerHTML = "<p>Please enter a question and select a Fiqh.</p>";
         return;
     }
 
-    responseDiv.innerHTML = "Loading...";
+    responseDiv.innerHTML = "<p>Loading...</p>";
 
     try {
         const response = await fetch('/ask', {
@@ -26,6 +26,6 @@ document.getElementById('queryForm').addEventListener('submit', async (event) =>
         const data = await response.json();
         responseDiv.innerHTML = data.response;
     } catch (error) {
-        responseDiv.innerHTML = `Error: ${error.message}`;
+        responseDiv.innerHTML = `<p>Error: ${error.message}</p>`;
     }
 });
